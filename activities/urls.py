@@ -1,6 +1,6 @@
-from django.conf.urls import url
+from django.conf.urls import patterns, url
 from .views import *
 
-urlpatterns = ('',
-               url(r'^$', ActivityList.as_view(), name='list')
+urlpatterns = patterns('',
+               url(r'^$', ActivityList.as_view(), name='list'),
 )
