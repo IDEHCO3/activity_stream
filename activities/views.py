@@ -11,3 +11,7 @@ class ActivityList(generics.ListCreateAPIView):
 
     permission_classes = (IsAuthenticatedOrReadOnly, )
     authentication_classes = (JSONWebTokenAuthentication, )
+
+    #def get_queryset(self):
+    #    user = self.request.user
+    #    return user.follows.all()

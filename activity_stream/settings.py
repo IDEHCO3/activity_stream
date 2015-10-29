@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework_jwt',
     'activities',
+    'follows',
 )
 
 MIDDLEWARE_CLASSES = (
