@@ -19,5 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^activities/', include('activities.urls', namespace='activity')),
-    url(r'^followers/', include('follows.urls', namespace='follower')),
+    url(r'^followers/', include('followers.urls', namespace='follower')),
 ]
