@@ -17,8 +17,8 @@ class ActivityList(generics.ListCreateAPIView):
         user = self.request.user
         if user.is_authenticated():
             condition = Q(author__id=user.id)
-            for follower in user.following.all():
-                condition = condition | Q(author__id=follower.following.id)
+            for follower in user.follow.all():
+                condition = condition | Q(author__id=follower.follow.id)
             return Activity.objects.filter(condition)
         else:
             return Activity.objects.all()
@@ -41,7 +41,7 @@ class ActivityRecentlyList(generics.ListAPIView):
 
         if user.is_authenticated():
             condition = condition & Q(author__id=user.id)
-            for follower in user.following.all():
-                condition = condition | Q(author__id=follower.following.id)
+            for follower in user.follow.all():
+                condition = condition | Q(author__id=follower.follow.id)
 
         return Activity.objects.filter(condition)
