@@ -10,8 +10,8 @@ class FollowerList(generics.ListCreateAPIView):
     queryset = Follower.objects.all()
     serializer_class = FollowerSerializer
 
-    permission_classes = (IsAuthenticatedOrReadOnly, )
-    authentication_classes = (JSONWebTokenAuthentication, )
+    #permission_classes = (IsAuthenticatedOrReadOnly, )
+    #authentication_classes = (JSONWebTokenAuthentication, )
 
     def get_queryset(self):
         user = self.request.user
